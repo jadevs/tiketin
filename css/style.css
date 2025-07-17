@@ -57,37 +57,65 @@ body {
   font-weight: 600;
 }
 
+/* Hero Content Refined */
 .hero-content {
   position: relative;
   z-index: 2;
   padding: 6rem 2rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.subheading {
+.hero-left {
+  max-width: 50%;
+  color: white;
+}
+
+.hero-left .label {
   color: #00e2d6;
   font-weight: 600;
+  font-size: 1rem;
   letter-spacing: 2px;
   margin-bottom: 1rem;
 }
 
-.hero-content h1 {
+.hero-left .title {
   font-size: 4rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
-.event-info {
+.hero-right {
+  max-width: 40%;
+  text-align: right;
+  color: white;
+}
+
+.hero-right .event-date,
+.hero-right .event-location {
+  margin: 0 0 10px;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-.btn-primary {
+.hero-right .btn {
+  display: inline-block;
+  margin-top: 10px;
   background: #00e2d6;
   color: #000;
-  padding: 0.75rem 2rem;
+  padding: 12px 24px;
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-right .btn:hover {
+  background: #00c7b9;
 }
 
 /* Testimonials */
