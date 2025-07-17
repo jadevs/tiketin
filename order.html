@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,19 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Tiket</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Form Pemesanan Tiket</h1>
-  <form action="submit-order.php" method="POST">
-    <input type="text" name="nama" placeholder="Nama Lengkap" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="text" name="wa" placeholder="Nomor WhatsApp" required>
-    <input type="number" name="jumlah" min="1" placeholder="Jumlah Tiket" required>
-    <select name="metode" required>
-      <option value="gopay">GoPay</option>
-      <option value="bank_transfer">Transfer Bank</option>
-    </select>
-    <button type="submit">Lanjutkan Pembayaran</button>
-  </form>
+  <section class="form-section">
+    <h1>Form Pemesanan Tiket</h1>
+    <form action="submit-order.php" method="POST">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Contoh: Karina Aulia" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Contoh: email@domain.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="wa">Nomor WhatsApp</label>
+        <input type="text" id="wa" name="wa" placeholder="Contoh: 081234567890" required>
+      </div>
+
+      <div class="form-group">
+        <label for="jumlah">Jumlah Tiket</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" max="10" value="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="metode">Metode Pembayaran</label>
+        <select id="metode" name="metode" required>
+          <option value="">-- Pilih Metode --</option>
+          <option value="gopay">GoPay</option>
+          <option value="bank_transfer">Transfer Bank</option>
+        </select>
+      </div>
+
+      <button type="submit">Lanjutkan Pembayaran</button>
+    </form>
+  </section>
 </body>
 </html>
