@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berhasil!</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="assets/js/qrcode.min.js"></script>
 </head>
 <body>
-  <h1>Pembayaran Berhasil!</h1>
-  <p>Berikut adalah e-ticket kamu:</p>
-  <div id="qrcode"></div>
-  <script>
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
-      text: "E-Ticket Dummy",
-      width: 200,
-      height: 200
-    });
-  </script>
-  <p>QR ini juga telah dikirim ke email kamu.</p>
+  <section class="success-section">
+    <h1>Pembayaran Berhasil ✅</h1>
+    <p>Terima kasih atas pembelianmu!</p>
+    <p>Berikut adalah QR e-ticket kamu:</p>
+    <div id="qrcode"></div>
+    <script>
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: "E-Ticket Dummy",
+        width: 200,
+        height: 200
+      });
+    </script>
+    <p class="note">QR juga telah dikirim ke email kamu. Silakan tunjukkan saat masuk venue.</p>
+  </section>
 </body>
 </html>
