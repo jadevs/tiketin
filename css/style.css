@@ -1,169 +1,297 @@
-/* ===== RESET & BASE STYLES ===== */
+/* Font and Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #ffffff;
-  color: #000000;
-  scroll-behavior: smooth;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-/* ===== LAYOUT ===== */
+/* Reusable Container */
 .container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
-section {
-  padding: 4rem 0;
+/* Hero / Header */
+.hero {
+  position: relative;
+  background: url('../assets/banner.png') no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
 }
 
-/* ===== COMPONENTS ===== */
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: #000000;
-  color: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.navbar a {
-  margin-left: 1rem;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.hero {
+  padding: 1.5rem 0;
   position: relative;
-  color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 6rem 1rem;
+  z-index: 2;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
+.search-box input {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  outline: none;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  margin-top: 1rem;
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background: #00f0c8;
-  color: #000;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
   font-weight: 600;
-  border-radius: 4rem;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  background: #00cfa9;
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 6rem;
+}
+
+.hero-left {
+  max-width: 50%;
+  color: white;
+}
+
+.hero-left .label {
+  color: #00e2d6;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.hero-left .title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-right {
+  max-width: 40%;
+  text-align: right;
+  color: white;
+}
+
+.hero-right .event-date,
+.hero-right .event-location {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-right .btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #00e2d6;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-right .btn:hover {
+  background: #00c7b9;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+}
+
+.testimonials h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
 }
 
 .testimonial {
-  background: #fff;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
+  max-width: 300px;
+  text-align: center;
 }
 
-.event-card {
-  background: #e0fff8;
-  border-radius: 1rem;
-  padding: 1.5rem;
+.testimonial img {
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Recap & Event Calendar */
+.recap-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  background: #00e2d6;
+  gap: 3rem;
+}
+
+.recap, .event-calendar {
+  flex: 1;
+}
+
+.recap-item, .event-item {
+  display: flex;
+  gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.recap-item img, .event-item img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.badge {
+  background: #000;
+  color: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Partnership */
+.partnership {
+  padding: 4rem 2rem;
+  background: #fff;
+  text-align: center;
 }
 
 .partner-logos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-  justify-content: center;
-  align-items: center;
+  margin-top: 2rem;
 }
 
-.footer {
-  background: #000000;
-  color: #ffffff;
-  padding: 2rem 1rem;
-  text-align: center;
+.logo {
+  background: #ddd;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-.footer .socials {
-  margin-top: 1rem;
+/* Footer */
+footer {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: #000;
+  color: #fff;
 }
 
-/* ===== RESPONSIVE ===== */
+.footer-left h3 {
+  margin-top: 0.5rem;
+}
+
+.footer-right .social-icons img {
+  width: 24px;
+  margin-right: 0.5rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 2rem;
   }
 
-  .hero p {
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
     font-size: 1rem;
   }
 
-  .event-layout {
+  .nav-links {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
-  .partner-logos {
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .hero-content {
     flex-direction: column;
-  }
-}
-
-@media (min-width: 769px) {
-  .event-layout {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    align-items: flex-start;
+    text-align: left;
+    padding: 4rem 2rem 2rem 2rem;
   }
 
-  .event-card {
-    width: 48%;
+  .hero-left, .hero-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-right {
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+  .hero-right .event-info {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .hero-right .btn {
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
   }
 }
